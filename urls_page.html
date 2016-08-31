@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>URLs to print</title>
+  <script>
+  function extractUrls() {
+          var elements = document.querySelectorAll('.to_print'); 
+                                                  var urls = [];
+                                                  var urls_str = "";
+                                                  document.MyUrls = "";
+                                                  for(var i=0; i<elements.length; i++) {
+                                                    if (elements[i].checked == true)  {
+                                                      urls.push(elements[i].getAttribute('value'));
+                                                      urls_str = urls_str.concat(elements[i].getAttribute('value'));
+                                                      urls_str = urls_str.concat(',');
+                                                    }
+                                                  };
+                                                  document.MyUrls = urls_str;
+                                                  if (urls.length == 0) alert('No URLs to print!');
+          else alert(document.MyUrls);
+  }
+  </script>
+ </head> 
+ <body>
+  <form action="">
+   <p><input class="to_print" type="checkbox" name="a" value="http://google.com">http://google.com</p>
+   <p><input class="to_print" type="checkbox" name="a" value="http://yandex.ru">http://yandex.ru</p>
+   <p><input class="to_print" type="checkbox" name="a" value="http://habrahabr.ru">http://habrahabr.ru</p>
+   <p><input class="to_print" type="checkbox" name="a" value="http://www.oracle.com/technetwork/java/javaee/javaee7-whitepaper-1956203.pdf">pdf</p>
+   <p><input class="to_print" type="checkbox" name="a" value="https://docs.oracle.com/javaee/7/JEETT.pdf">big pdf</p>
+   <p><input class="to_print" type="checkbox" name="a" value="http://geektimes.ru">http://geektimes.ru</p>
+   <p><input class="to_print" type="checkbox" name="a" value="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png">picture</p>
+   <p><input class="to_print" type="checkbox" name="a" value="https://www.google.ru/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&ved=0ahUKEwjwyc7j29nOAhXICJoKHenTBIoQFgg8MAM&url=https%3A%2F%2Fglassfish.java.net%2Fdocs%2F4.0%2Fglassfish40cert-matrix.xls&usg=AFQjCNFc3ed9NVhmCfL2jE7geBtciJMCOg&bvm=bv.129759880,d.bGs&cad=rja">xls</p>
+   <button onclick="window.open();">Click me</button>
+  </form>
+ </body>
+</html>
+
+
